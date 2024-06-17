@@ -9,10 +9,13 @@ const setuser = props.setuser
 
 const [Eusername,setEusername]=useState()
 const[Epassword,setEpassword]=useState()
+const[Cpassword,setCpassword]=useState()
 
 function handelUinput(evt){
 
     setEusername(evt.target.value)
+    
+
     }
     
     function handelPinput(evt){
@@ -20,8 +23,26 @@ function handelUinput(evt){
     setEpassword(evt.target.value)
     }
     
+
+    function handelCinput(evt){
+      setCpassword(evt.target.value)
+      setEpassword(evt.target.value ===Cpassword)
+      
+    }
+
+    
+  
+
+
+
+
+
+
+
+
+
 function Adduser(){
-    setuser([...users,{username:Eusername,password:Epassword}])
+    setuser([...users,{username:Eusername,password:Epassword ,confrimPassword:Cpassword}])
   
       navigate("/")
     
@@ -36,11 +57,11 @@ function Adduser(){
         <p>Sign Up here  :) </p>
 <div className="flex flex-col gap-2 my-2 flex-grow">
         <input type='text' placeholder='Username' onChange={handelUinput}
-         className="border border-black bg-transparent p-1 w-52  rounded-md "/>
-        <input type='text' placeholder='Password' onChange={handelPinput}
-         className="border border-black bg-transparent p-1 w-52  rounded-md "/>
-                 <input type='text' placeholder=' confrim Password'
-         className="border border-black bg-transparent p-1 w-52  rounded-md "/>
+         className="border border-black bg-transparent p-1 w-52  rounded-md "required/>
+        <input type='password' placeholder='Password' onChange={handelPinput}
+         className="border border-black bg-transparent p-1 w-52  rounded-md "required/>
+                 <input type='password' placeholder=' confrimPassword' onChange={handelCinput}
+         className="border border-black bg-transparent p-1 w-52  rounded-md "required/>
 
 
         <button onClick={Adduser}  className="bg-[#2f782a] border w-24  rounded-md p-2 text-white font-semibold">Signup</button>

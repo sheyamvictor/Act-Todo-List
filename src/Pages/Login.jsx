@@ -54,10 +54,10 @@ setRuser(false)
 <div className="flex flex-col gap-2 my-2 flex-grow">
         <input type='text' 
         placeholder='Username' onChange={handelUinput}
-         className="border border-black bg-transparent p-1 w-52  rounded-md "/>
-        <input type='text' 
+         className="border border-black bg-transparent p-1 w-52  rounded-md " required/>
+        <input type='password' 
         placeholder='Password' onChange={handelPinput}
-         className="border border-black bg-transparent p-1 w-52  rounded-md "/>
+         className="border border-black bg-transparent p-1 w-52  rounded-md " required/>
 
         <button onClick={checkuser} className="bg-[#5f63c6] border w-24  rounded-md p-2 text-white font-semibold">Login</button>
         <p>Don't have an account? <Link to={"/SignUp"} className="underline">SignUp</Link></p>
