@@ -26,7 +26,7 @@ function handelUinput(evt){
 
     function handelCinput(evt){
       setCpassword(evt.target.value)
-      setEpassword(evt.target.value ===Cpassword)
+      setCpassword(evt.target.value === Epassword)
       
     }
 
